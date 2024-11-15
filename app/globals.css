@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+#sidebar-menu::-webkit-scrollbar {
+  width: 8px; /* Kaydırma çubuğu genişliği */
+
+}
+
+#sidebar-menu::-webkit-scrollbar-thumb {
+  background: #ccc !important; /* Kaydırma çubuğu rengi */
+  border-radius: 5px !important; /* Kenar yuvarlama */
+}
+
+#sidebar-menu::-webkit-scrollbar-thumb:hover {
+  background: #999 !important; /* Hover rengi */
+}
+
+.sub-menu{
+  display: none;
+}
+
+.show + ul.sub-menu{
+  display: block !important;
+}
+
+
+
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;  /* Görsel olarak devre dışı gibi göstermek için */
+}
+
+
+
+.tree-node {
+  padding: 5px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tree-node:hover {
+  background-color: #e0e0e0;
+}
+
+.tree-node.selected {
+  background-color: #cce5ff; /* Tıklanan node mavi arka planla vurgulanacak */
+  font-weight: bold;
+}
+
+
+.grid-icon {
+  display: grid;
+  grid-template-columns: repeat(3, 8px);
+  grid-template-rows: repeat(3, 8px);
+  gap: 4px;
+}
+
+.grid-item {
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border-radius: 0px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.grid-item:nth-child(1) { animation-delay: 0s; }
+.grid-item:nth-child(2) { animation-delay: 0.1s; }
+.grid-item:nth-child(3) { animation-delay: 0.2s; }
+.grid-item:nth-child(4) { animation-delay: 0.3s; }
+.grid-item:nth-child(5) { animation-delay: 0.4s; }
+.grid-item:nth-child(6) { animation-delay: 0.5s; }
+.grid-item:nth-child(7) { animation-delay: 0.6s; }
+.grid-item:nth-child(8) { animation-delay: 0.7s; }
+.grid-item:nth-child(9) { animation-delay: 0.8s; }
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
