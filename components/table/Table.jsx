@@ -75,46 +75,6 @@ const Table = ({ headers, minCellWidth, tableContent, searchable }) => {
     };
   }, [activeIndex, mouseMove, mouseUp, removeListeners]);
 
-  // Demo only
-  const resetTableCells = () => {
-    tableElement.current.style.gridTemplateColumns = "";
-  };
-
-
-
-  // const [sortConfig, setSortConfig] = useState(null);
-
-
-  // const sortedData = React.useMemo(() => {
-  //   let sortableItems = [...tableContent.props.rowData];
-  //   if (sortConfig !== null) {
-  //     sortableItems.sort((a, b) => {
-  //       if (a[sortConfig.key] < b[sortConfig.key]) {
-  //         return sortConfig.direction === 'ascending' ? -1 : 1;
-  //       }
-  //       if (a[sortConfig.key] > b[sortConfig.key]) {
-  //         return sortConfig.direction === 'ascending' ? 1 : -1;
-  //       }
-  //       return 0;
-  //     });
-  //   }
-  //   return sortableItems;
-  // }, [tableContent.props.rowData, sortConfig]);
-
-
-  // const requestSort = key => {
-  //   let direction = 'ascending';
-  //   if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
-  //     direction = 'descending';
-  //   }
-
-
-  //   setSortConfig({ key, direction });
-
-  // };
-
-
-
 
   return (
     <div className="container-fluid">

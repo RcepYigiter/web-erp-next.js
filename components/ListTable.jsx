@@ -1,4 +1,5 @@
 
+"use client"
 import { AgGridReact } from 'ag-grid-react';
 import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the Data Grid
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the Data Grid
@@ -13,23 +14,19 @@ import {
     PaginationLink,
     PaginationNext,
     PaginationPrevious,
-  } from "@/components/ui/pagination"
-const ListTable = () => {
+} from "@/components/ui/pagination"
+import fetchApi from '@/lib/api/fetchApi';
+const ListTable = ({ colDefs }) => {
     const [rowData, setRowData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [pageSize, setPageSize] = useState(50); // Sayfa başına 5 öğe
+    const [pageSize, setPageSize] = useState(20); // Sayfa başına 5 öğe
     const [totalPages, setTotalPages] = useState(0);
     const [totalRecords, setTotalRecords] = useState(0);
     const [loading, setLoading] = useState(false);
 
     // Kolonlar (Ag-Grid için)
-    const [columnDefs] = useState([
-        { headerName: 'ID', field: 'id' },
-        { headerName: 'Title', field: 'title' },
-        { headerName: 'Body', field: 'body' },
-    ]);
+    const [columnDefs] = useState(colDefs);
 
-    // API'den veri çekme
     const fetchData = async (page, pageSize) => {
         setLoading(true);
         try {
@@ -44,9 +41,12 @@ const ListTable = () => {
         } finally {
             setLoading(false);
         }
+
+
+
     };
 
-    // Sayfa numarasını değiştirdiğinde API'den yeni veri çek
+
     useEffect(() => {
         fetchData(currentPage, pageSize);
     }, [currentPage, pageSize]);
@@ -64,15 +64,12 @@ const ListTable = () => {
         }
     };
 
-    const handlePageSizeChange = (size) => {
-        setPageSize(size);
-        setCurrentPage(1); // Sayfa boyutu değiştiğinde, sayfayı ilk sayfaya sıfırla
-    };
+
 
     return (
-        <div className='flex flex-col w-full'>
-            <div className="ag-theme-quartz w-full h-[calc(100vh-130px)]" // applying the Data Grid theme
-                >
+        <div className='flex flex-col w-full h-full'>
+            <div className="ag-theme-quartz w-full h-full" // applying the Data Grid theme
+            >
                 <AgGridReact
                     rowData={rowData}
                     columnDefs={columnDefs}
@@ -88,7 +85,7 @@ const ListTable = () => {
             <Pagination>
                 <PaginationContent>
                     <PaginationItem>
-                        <PaginationPrevious href="#" onClick={handlePreviousPage} disabled={currentPage === 1}/>
+                        <PaginationPrevious href="#" onClick={handlePreviousPage} disabled={currentPage === 1} />
                     </PaginationItem>
                     <PaginationItem>
                         <PaginationLink href="#">1</PaginationLink>
@@ -105,7 +102,7 @@ const ListTable = () => {
                         <PaginationEllipsis />
                     </PaginationItem>
                     <PaginationItem>
-                        <PaginationNext href="#" onClick={handleNextPage} disabled={currentPage === totalPages}/>
+                        <PaginationNext href="#" onClick={handleNextPage} disabled={currentPage === totalPages} />
                     </PaginationItem>
                 </PaginationContent>
             </Pagination>
