@@ -18,7 +18,7 @@ const ModulMenu = () => {
             modul: 'Stok',
             icon: 'fa-solid fa-cubes',
             class: 'text-slate-600 text-2xl group-hover:text-cyan-700',
-            href: 'stok-yonetimi',
+            href: '/stok-yonetimi',
             disabled: false,
         },
         {
@@ -53,8 +53,8 @@ const ModulMenu = () => {
             modul: 'Personel',
             icon: 'fa-solid fa-users',
             class: 'text-slate-600 text-2xl group-hover:text-cyan-700',
-            href: 'personel',
-            disabled: true,
+            href: '/personel',
+            disabled: false,
         },
     ];
 

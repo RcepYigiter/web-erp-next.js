@@ -51,6 +51,31 @@
 
 
 
+.treeview-menu {
+  list-style-type: none;
+  padding-left: 20px;
+}
 
+.treeview-menu .nested {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.treeview-menu .item {
+  margin: 5px 0;
+}
+
+.treeview-menu .treeview-link {
+  display: block;
+  text-decoration: none;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #333;
+}
+
+.treeview-menu .treeview-link:hover {
+  background-color: #e0e0e0;
+}
 
 
