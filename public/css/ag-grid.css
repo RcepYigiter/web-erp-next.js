@@ -1,0 +1,16 @@
+.ag-layout-auto-height {
+  height: 100%;
+}
+.ag-row-animation .ag-row,
+.ag-header-viewport,
+.ag-header-cell,
+.ag-layout-auto-height,
+.ag-body .ag-body-viewport
+{
+  background-color: #f3f3f4;
+}
+
+.ag-root-wrapper {
+  border-radius: 0;
+  border: 0;
+}

@@ -1,9 +1,11 @@
 
 "use client"
+import StokSidebar from '@/components/sidebar/StokSidebar';
 import classNames from 'classnames';
+import Link from 'next/link'
 import React, { Children, useState } from 'react'
 
-const StokYonetimi = ({children}) => {
+const StokYonetimi = ({ children }) => {
 
   const menu = [
     {
@@ -11,7 +13,7 @@ const StokYonetimi = ({children}) => {
       icon: '',
       href: '',
       submenu: [
-        { label: 'Stok', icon: 'fa fa-inbox', submenu: [], href: '/stok-yonetimi/stok/stok-karti' },
+        { label: 'Stok', icon: 'fa fa-inbox', submenu: [], href: '/stok-yonetimi/stok-karti' },
         { label: 'Depo', icon: 'fa fa-inbox', submenu: [], href: '' },
         { label: 'Hizmet', icon: 'fa fa-inbox', submenu: [], href: '' },
         { label: 'Masraf', icon: 'fa fa-inbox', submenu: [], href: '' },
@@ -133,7 +135,8 @@ const StokYonetimi = ({children}) => {
 
   return (
     <div className="flex w-full " style={{ height: '100vh' }}>
-      <div id="sidebar-menu" className="ibox overflow-auto min-w-52 md:min-w-56 md:max-w-56" style={{ borderRight: '1px solid rgba(0, 0, 0, 0.06)' }}>
+     
+      {/* <div id="sidebar-menu" className="ibox overflow-auto min-w-52 md:min-w-56 md:max-w-56" style={{ borderRight: '1px solid rgba(0, 0, 0, 0.06)' }}>
         <div className="ibox-content mailbox-content p-1  ">
           <div className="file-manager">
 
@@ -152,11 +155,11 @@ const StokYonetimi = ({children}) => {
                         <div key={j}>
                           {
                             sub.submenu.length == 0 ?
-                             <li key={j} className="hover:bg-slate-200 px-2"><a > <i className={`${sub.icon}`}></i> {sub.label} </a></li> :
+                              <li key={j} className="hover:bg-slate-200 px-2"><Link href={sub.href} > <i className={`${sub.icon}`}></i> {sub.label} </Link></li> :
 
                               <li key={j}>
                                 <div onClick={() => showSubMenu(j)} className={`${classNames({ 'show': show[j] })} flex items-center justify-between hover:bg-slate-200 px-2 cursor-pointer `}>
-                                  <a> <i className="fa fa-circle text-warning"></i> {sub.label} </a>
+                                  <Link href={sub.href}> <i className="fa fa-circle text-warning"></i> {sub.label} </Link>
 
                                   {
                                     show[j] ? <i className="fa-solid fa-sort-down"></i> : <i className="fa-solid fa-caret-right"></i>
@@ -167,8 +170,8 @@ const StokYonetimi = ({children}) => {
 
                                   {
                                     sub.submenu.map((item, t) => (
-                                      <li key={t} className="pl-4"><a  > <i className="fa fa-file "></i>
-                                        {item.label}</a></li>
+                                      <li key={t} className="pl-4"><Link href={sub.href}  > <i className="fa fa-file "></i>
+                                        {item.label}</Link></li>
                                     ))
                                   }
                                   <div className="clearfix"></div>
@@ -190,7 +193,10 @@ const StokYonetimi = ({children}) => {
 
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <StokSidebar/>
+
       <div className="animated fadeInRight w-full">
 
         {children}

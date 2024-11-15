@@ -1,0 +1,42 @@
+
+
+#sidebar-menu::-webkit-scrollbar {
+    width: 8px; /* Kaydırma çubuğu genişliği */
+  
+  }
+  
+  #sidebar-menu::-webkit-scrollbar-thumb {
+    background: #ccc !important; /* Kaydırma çubuğu rengi */
+    border-radius: 5px !important; /* Kenar yuvarlama */
+  }
+  
+  #sidebar-menu::-webkit-scrollbar-thumb:hover {
+    background: #999 !important; /* Hover rengi */
+  }
+  
+  .sub-menu{
+    display: none;
+  }
+  
+  .show + ul.sub-menu{
+    display: block !important;
+  }
+
+
+
+  #sidebar-menu ul {
+    list-style-type: none;
+    padding-left: 0px;
+  }
+  
+  #sidebar-menu li {
+    margin: 0px 0;
+  }
+  
+  #sidebar-menu span {
+    font-weight: normal;
+    cursor: pointer;
+    padding: 5px 0;
+  }
+  
+  

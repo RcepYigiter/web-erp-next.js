@@ -1,0 +1,14 @@
+#tree-view ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+#tree-view li {
+  margin: 0px 0;
+}
+
+#tree-view span {
+  font-weight: normal;
+  cursor: pointer;
+  padding: 5px 0;
+}

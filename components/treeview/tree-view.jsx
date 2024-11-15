@@ -9,7 +9,7 @@ const Treeview = ({ treeData }) => {
         setClickedNode(node); // Tıklanan node verisini sakla
     };
     return (
-        <ul style={{ padding: '0', margin: '0' }} >
+        <ul id='tree-view' style={{ padding: '0', margin: '0' }} >
             {treeData.map((node) => (
                 <TreeNode key={node.id} node={node} onNodeClick={handleNodeClick} />
             ))}

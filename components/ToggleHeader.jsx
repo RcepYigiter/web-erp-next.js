@@ -21,6 +21,7 @@ const ToggleHeader = () => {
         'stok': 'Stok',
         'stok-karti': 'Stok Kartı',
         'muhasebe': 'Muhasebe',
+        'stok-yonetimi':'Stok Yönetimi'
     };
 
 

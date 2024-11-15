@@ -1,22 +1,27 @@
 
 import localFont from "next/font/local";
 import "./globals.css";
-
 import Script from "next/script";
 import ReduxProvider from "@/store/provider/provider";
+import Header from "@/components/layout/Header";
+import ModulMenu from "@/components/layout/ModulMenu";
+import NavigationBar from "@/components/layout/NavigationBar";
 
-import ToggleHeader from "@/components/ToggleHeader";
-import FixedMenu from "@/components/FixedMenu";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
+
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
 
 export const metadata = {
   title: "Create Next App",
@@ -30,109 +35,37 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body  >
-
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
         <link rel="stylesheet" href="/css/plugins/iCheck/custom.css" />
         <link rel="stylesheet" href="/css/animate.css" />
         <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/ag-grid.css" />
+        <link rel="stylesheet" href="/css/tree-view.css" />
+
+
+
+
+
         <ReduxProvider>
-          {/* <div id="wrapper" className="flex flex-col h-full ">
-            <Navbar />
-            <div className="flex w-full h-full ">
-              <FixedMenu />
-
-              <div className="w-full">
-
-                {children}
-
-              </div>
-
-            </div>
-
-
-          </div> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           <div id="wrapper" className="flex flex-col h-full overflow-hidden">
-            <header className="flex items-center w-full h-10 bg-slate-600 ">
-              <div className=" flex-grow flex items-center ">
-                <div className=" flex items-center px-2 ">
-                  <div className="grid-icon group cursor-pointer" >
-                    <div className="grid-item group-hover:bg-slate-300" />
-                    <div className="grid-item group-hover:bg-slate-300" />
-                    <div className="grid-item group-hover:bg-slate-300" />
-                    <div className="grid-item group-hover:bg-slate-300" />
-                    <div className="grid-item group-hover:bg-slate-300" />
-                    <div className="grid-item group-hover:bg-slate-300" />
-                    <div className="grid-item group-hover:bg-slate-300" />
-                    <div className="grid-item group-hover:bg-slate-300" />
-                    <div className="grid-item group-hover:bg-slate-300" />
-                  </div>
-                  <span className="text-xl px-2 text-white">Yükseliş Asansör</span>
-                </div>
-                <div className="w-2/3  px-5 flex justify-around ">
-                  <div className="relative w-full">
-                    <input type="text" className="p-2 w-full" />
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col px-2">
-                <span className="text-right">Recep YİĞİTER</span>
-                <span className="text-right">Admin</span>
-              </div>
-              <i className="fa-regular fa-user text-2xl text-white p-2 hover:bg-slate-500" />
-              <i className="fa-solid fa-gear text-2xl text-white p-2 hover:bg-slate-500" />
-            </header>
-
-
+            <Header />
             <div id="page-wrapper" className="gray-bg w-full p-0 " style={{ minHeight: 'calc(100vh - 40px) !important' }}>
               <div className="wrapper wrapper-content w-full flex p-0 m-0" style={{ height: '100%' }}>
-
-
-
-                <FixedMenu />
-
+                <ModulMenu />
                 <div className="flex flex-col w-full pl-20">
                   <div className="border-b-gray-50 ">
-
-                    <ToggleHeader />
-
-
+                    <NavigationBar />
                   </div>
-
                   {children}
                 </div>
               </div>
             </div>
           </div>
-
-
-
-
-
-
-
-
-
-
-
         </ReduxProvider>
+
+
+
 
 
         <Script src="/js/jquery-3.1.1.min.js"></Script>
