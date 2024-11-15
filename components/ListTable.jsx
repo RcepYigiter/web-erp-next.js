@@ -32,10 +32,10 @@ const ListTable = ({ colDefs }) => {
         try {
             const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${pageSize}`);
             const result = await response.json();
-            const total = response.headers.get('x-total-count'); // Toplam öğe sayısını al
+            const total = response.headers.get('x-total-count');
             setRowData(result);
             setTotalRecords(parseInt(total));
-            setTotalPages(Math.ceil(total / pageSize)); // Toplam sayfa sayısını hesapla
+            setTotalPages(Math.ceil(total / pageSize)); 
         } catch (error) {
             console.error('Error fetching data:', error);
         } finally {
